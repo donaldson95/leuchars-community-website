@@ -34,49 +34,6 @@ img {
   border-style: none;
 }
 
-
-
-
-            *, *:after, *:before {
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-        }
-        .item{
-                max-width: 100%;
-                /* background: black; */
-                color: white;
-                /* border-radius: 8px; */
-                height: 140px;
-                width: 140px;
-                margin:5px 5px;
-                padding: 10px;
-                font-weight: bolder;
-                font-size: 20px;
-                text-align: center;
-                line-height: 40px;
-                border: none;
-                /*-webkit-transition: .5s ease-in-out;*/
-        }
-        .container{
-                width: 40%;
-                margin: 0 auto;
-                outline: 2px dashed red;
-                padding: 10px;
-        }
-
-        .item:nth-child(2n){
-                height: 140px;
-        }
-        .item:nth-child(2n+1){
-                height: 140px
-        }
-        .item.special-margins{
-                margin-bottom: 10px;
-                margin-top: 0px;
-                margin-left: 10px;
-                margin-right: 10px;
-        }
     </style>
 
 	<link rel="stylesheet" href="assets/foundation.min.css" />
@@ -96,31 +53,15 @@ img {
     <br />
 
 
+    <div class="row">
+      <div class="large-12 columns">
+        <p><a href="photos-leuchars.html">leuchars</a></p>
+        <p><a href="photos-junction-gardens.html">junction gardens</a></p>
+      </div>
+    </div>
 
 
-<div class="row">
-    <div class="large-12 columns">
-        <div class="large-8 medium-8 columns">
-
-            <!-- <a href="javascript: history.go(-1)">back</a> -->
-
-            <br />
-
-            <div id="container"></div>
-
-            <script type="text/x-handlebars-template" id="waterfall-tpl">
-                {{#result}}
-                <span class="item">
-                <a href="media/{{image}}"><img src="media/thumbs/{{image}}" width="{{width}}" height="{{height}}" /></a>
-                </span>
-                {{/result}}
-            </script>
-
-        </div>
-
-
-
-    <br /><br /><br />
+    <br />
     <div class="row">
       <div class="large-12 columns">
         Leuchars Community Website        <br />        <br />This project is supported by Leuchars Community Council [April 2007 - present]        <br />
@@ -128,52 +69,12 @@ img {
       </div>
     </div>
 
-            <script src="assets/jquery.min.js"></script>
-            <script src="assets/foundation.min.js"></script>
-            <script src="assets/handlebars.js"></script>
-            <script src="assets/waterfall.min.js"></script>
-            <script>
-$(document).ready(function() {
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="assets/foundation.min.js"></script>
 
-    $(document).foundation();
-
-    $('#container').waterfall({
-        itemCls: 'item',
-        colWidth: 130,
-        gutterWidth: 15,
-        gutterHeight: 15,
-        checkImagesLoaded: false,
-        callbacks: {
-            renderData: function(data, dataType) {
-                var tpl,
-                        template,
-                        resultNum = data.total;
-
-                if (resultNum < 20) {
-                    $('#container').waterfall('pause', function() {
-                        $('#waterfall-message').html('<p style="color:#666;">no more data...</p>')
-                        //alert('no more data');
-                    });
-                }
-
-                if (dataType === 'json' || dataType === 'jsonp') { // json or jsonp format
-                    tpl = $('#waterfall-tpl').html();
-                    template = Handlebars.compile(tpl);
-
-                    return template(data);
-                } else { // html format
-                    return data;
-                }
-            }
-        },
-        path: function(page) {
-            return 'data/photo-waterfall-page-' + page + '.json';
-        }
-    });
-});
-            </script>
-
-
+    <script>
+      $(document).foundation();
+    </script>
 
     <!-- google analytics -->
     <script>

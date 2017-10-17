@@ -1,5 +1,5 @@
 {
-  "total" : 20,
+  "total" : 18,
   "result": [
     { 
      "id" : "154", 
@@ -82,18 +82,6 @@
     { 
      "id" : "141", 
      "image" : "Leuchars_back_of_Church.jpg", 
-     "width" : "100", 
-     "height" : "75" 
-    },
-    { 
-     "id" : "140", 
-     "image" : "2008_Roadside_Wild_Flowers.jpg", 
-     "width" : "100", 
-     "height" : "75" 
-    },
-    { 
-     "id" : "139", 
-     "image" : "2008_Garden_Toadstool.jpg", 
      "width" : "100", 
      "height" : "75" 
     },
